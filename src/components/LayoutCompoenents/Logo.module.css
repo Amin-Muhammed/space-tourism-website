@@ -1,0 +1,21 @@
+.logo {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logo img {
+  height: auto;
+  margin-left: 2rem;
+}
+
+.line {
+  width: 75%;
+  height: 2px;
+  background-color: white;
+}
+@media (max-width: 905px) {
+  .line {
+    display: none;
+  }
+}

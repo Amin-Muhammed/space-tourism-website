@@ -1,0 +1,20 @@
+.homeContent {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 70dvh;
+  /* margin-inline: calc(10% - 1rem); */
+  padding-block-start: 100px;
+}
+@media (max-width: 1323px) {
+  .homeContent {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 70dvh;
+    gap: max(1vh, 10%);
+  }
+  .homeContent button {
+    align-self: center;
+  }
+}

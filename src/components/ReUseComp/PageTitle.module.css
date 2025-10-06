@@ -1,0 +1,21 @@
+.page-title {
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  align-self: flex-start;
+  font-size: var(--fs-500);
+  word-spacing: 4px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.page-title span {
+  color: var(--neutral-100);
+  margin-right: 1rem;
+  font-weight: var(--fw-medium);
+  opacity: 0.3;
+}
+@media (max-width: 905px) {
+  .page-title {
+    text-align: center;
+  }
+}

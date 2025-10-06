@@ -1,0 +1,128 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* colors */
+  --neutral-100: #ffffff;
+  --neutral-300: hsl(231, 77%, 90%);
+  --neutral-900: hsl(230, 35%, 7%);
+  /* header-elements */
+  --header-hieght: 100px;
+  --header-element-gap: calc(10vw - 2rem);
+  --header--margin-top: 50px;
+
+  /* font-families */
+  --ff-primary: 'Barlow Condensed', serif;
+  --ff-secondory: 'Bellefair', sans-serif;
+  --ff-sans-normal: 'Barlow', sans-serif;
+
+  /* font-sizes */
+  --fs-900: 9rem;
+  --fs-800: 6rem;
+  --fs-700: clamp(1.5rem, 7vw + 1rem, 3.5rem);
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+  /* font weights*/
+
+  --fw-thin: 100;
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+  --fw-extra-bold: 800;
+  --fw-black: 900;
+
+  /* pages padding */
+  --page-padding-end: 10vh;
+  --background-color-line: hsl(231 15% 26%);
+  --line-height: 1px;
+}
+
+html {
+  overflow: none;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  color: white;
+  background-color: black;
+  font-family: var(--ff-sans-normal);
+  font-weight: var(--fw-regular);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.home-explore-btn {
+  background-color: var(--neutral-100);
+  border-radius: 100%;
+  border: none;
+  flex-shrink: 0; /* stop shrink if the height is getting to small */
+  width: 17rem;
+  height: 17rem;
+  font-size: var(--fs-600);
+  align-self: flex-end;
+  transition: box-shadow 0.3s ease-out;
+  font-family: var(--ff-secondory);
+  color: black;
+}
+.home-explore-btn:hover {
+  box-shadow: 0px 0px 0px 60px rgba(255, 255, 255, 0.184); /* create the outline shadow for the explore btn */
+  transition: box-shadow 0.3s ease-in;
+}
+p {
+  line-height: 1.8;
+  color: var(--neutral-300);
+  font-size: var(--fs-400);
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media (max-width: 35em) {
+  /* phone */
+}
+@media (max-width: 45em) {
+  :root {
+    --fs-900: 5rem;
+    --fs-800: 6.25rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1rem;
+    --fs-400: 1rem;
+  }
+  .home-explore-btn:active {
+    box-shadow: 0px 0px 0px 40px rgba(255, 255, 255, 0.184); /* create the outline shadow for the explore btn */
+  }
+  .home-explore-btn:hover {
+    box-shadow: none;
+    /* deactivate the transition */
+  }
+}
+@media (max-width: 35em) {
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-400: 0.94rem;
+  }
+  .home-explore-btn {
+    width: 9rem;
+    height: 9rem;
+  }
+  .home-explore-btn:active {
+    box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.184); /* create the outline shadow for the explore btn */
+  }
+}

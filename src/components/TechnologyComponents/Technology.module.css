@@ -1,0 +1,7 @@
+
+.crew-information-container h1 {
+  font-size: var(--fs-700);
+}
+.crew-information-container h2 {
+  font-size: var(--fs-600);
+}

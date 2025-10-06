@@ -1,0 +1,21 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moon {
+  object-fit: cover;
+  margin-bottom: 10rem;
+  animation: spin 60s linear infinite; /* Rotates every 10 seconds */
+  /* transform: rotateZ(90deg); */
+}
+@media (max-width: 768px) {
+  .moon {
+    width: 400px;
+    height: 400px;
+  }
+}
