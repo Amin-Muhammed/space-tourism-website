@@ -5,12 +5,13 @@ import { useOutletContext } from 'react-router';
 import useLazyBackground from '../../Hooks/useLazyBackground';
 import HeaderNavLine from '../LayoutCompoenents/HeaderNavLine';
 import Spinner from '../ReUseComp/Spinner';
+import ImageContainer from '../ReUseComp/ImageContainer';
+import { Image, ImageKitProvider } from '@imagekit/react';
+import LoadingPlanet from './LoadingPlanet/LoadingPlanet';
 const Moon = () => {
   const { data, isloading, error, type } = useOutletContext();
-  const isImgLoaded = useLazyBackground(moon);
-
+  let isImgLoaded = useLazyBackground(moon);
   if (!data || isloading) return <p>loading</p>;
-
   const {
     name = 'not available',
     description = 'not provided',
@@ -20,11 +21,20 @@ const Moon = () => {
   if (type === 'planet image outlet') {
     return (
       <div className={`${styles['planet-image']}`}>
-        <img
-          className={`${isImgLoaded ? styles['fade-in-img'] : ''} ${styles.image}`}
-          src={moon}
-          alt="moon"
-        />
+        {isImgLoaded ? (
+          <img className={`${styles['fade-in-img']} ${styles.image}`} src={moon} alt="moon" />
+        ) : (
+          <LoadingPlanet />
+        )}
+        {/* <ImageKitProvider urlEndpoint={'https://ik.im/agekit.io/qazwsqhfv'}>
+          <Image
+            urlEndpoint="https://ik.imagekit.io/qazwsqhfv"
+            src="assets/destination/image-moon.png"
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
+        </ImageKitProvider> */}
       </div>
     );
   } else if (type === 'planet info outlet')

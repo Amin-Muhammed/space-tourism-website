@@ -17,9 +17,11 @@ const imageMap = {
 };
 const Technology = ({ data }) => {
   const isOnTabletWidth = window.innerWidth <= 946;
+  if (!data) return <p>failed to load data.</p>;
   const imgPath = isOnTabletWidth
     ? data.images.landscape.split('/').pop()
     : data.images.portrait.split('/').pop();
+
   return (
     <>
       <div className={styles['crew-information-container']}>

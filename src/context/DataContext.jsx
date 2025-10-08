@@ -1,18 +1,15 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 
-const urls = {
-  destinations: import.meta.env.VITE_DESTINATION_API,
-  crew: import.meta.env.VITE_CREW_API,
-  technology: import.meta.env.VITE_TECHNOLOGY_API,
-};
+const BASE_URL =
+  'https://raw.githubusercontent.com/Amin-Muhammed/space-tourism-website/refs/heads/main/src/Data';
 const DataContextProvider = createContext();
 const DataContext = ({ children }) => {
   const [data, setdata] = useState(null);
   const [isloading, setisloading] = useState(false);
   const [error, seterror] = useState('');
-  const [page, setPage] = useState('destinations');
+  const [page, setPage] = useState(null);
 
-  const fetchData = async () => {
+  async function fetchData(page = 'destination') {
     const cached = localStorage.getItem(page);
     if (cached) {
       // check the storage
@@ -21,24 +18,23 @@ const DataContext = ({ children }) => {
       return; // stop if the page is in the local storage
     }
     setisloading(true);
+    console.log(page);
     try {
-      console.log(urls.crew);
-
-      const response = await fetch(urls[page]);
-      if (!response.ok) throw new Error('failed to recieve data');
+      const response = await fetch(`${BASE_URL}/${page}.json`);
+      if (!response.ok) {
+        console.log('error detected durring fetching');
+        throw new Error('failed to recieve data');
+      }
       const data = await response.json();
       setdata(data);
+
       localStorage.setItem(page, JSON.stringify(data)); // page is key, and data is value
     } catch (e) {
       seterror(e.message);
     } finally {
       setisloading(false);
     }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [page]);
+  }
 
   return (
     <DataContextProvider.Provider

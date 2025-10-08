@@ -1,47 +1,50 @@
 import React from 'react';
 import styles from './Moon.module.css';
-import europe from '../../assets/destination/image-europa.png';
+import europa from '../../assets/destination/image-europa.png';
 import { useOutletContext } from 'react-router';
 import useLazyBackground from '../../Hooks/useLazyBackground';
 import LoadingPlanet from './LoadingPlanet/LoadingPlanet';
 import HeaderNavLine from '../LayoutCompoenents/HeaderNavLine';
-import Spinner from '../ReUseComp/Spinner';
 
-const Europe = () => {
+const Europa = () => {
   const { data, isloading, error, type } = useOutletContext();
-  let isImgLoaded = useLazyBackground(europe);
+  const isImgLoaded = useLazyBackground(europa);
+  if (!data || isloading) return <p>loading</p>;
 
-  if (!data) return <Spinner />;
-
-  if (isloading) return;
   const {
     name = 'not available',
     description = 'not provided',
     distance = 'unknown',
     travel = 'unknown',
   } = data.at(2);
+
   if (type === 'planet image outlet') {
     return (
       <div className={styles['planet-image']}>
-        <img className={isImgLoaded ? styles['fade-in-img'] : ''} src={europe} alt="europe image" />
+        {isImgLoaded ? (
+          <img className={`${styles['fade-in-img']} ${styles.image}`} src={europa} alt="europa" />
+        ) : (
+          <LoadingPlanet />
+        )}
       </div>
     );
   } else if (type === 'planet info outlet') {
     return (
       <div
-        className={`${styles['planet-information']} ${isImgLoaded ? styles['fade-in-content'] : ''}`}
+        className={`${styles['planet-information']} ${
+          isImgLoaded ? styles['fade-in-content'] : ''
+        }`}
       >
         <h1>{name}</h1>
         <p>{description}</p>
         <HeaderNavLine className={styles.line} />
-
         <div className={styles.avarages}>
           <div>
-            <h6>AVG. DISTANCE</h6>
+            <h5>AVG. DISTANCE</h5>
             <span>{distance}</span>
           </div>
           <div>
-            <h6>AVG. TRAVEL TIME</h6>
+            <h5>AVG. TRAVEL TIME</h5>
             <span>{travel}</span>
           </div>
         </div>
@@ -50,4 +53,4 @@ const Europe = () => {
   }
 };
 
-export default Europe;
+export default Europa;

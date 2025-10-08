@@ -18,10 +18,11 @@ const NAV_OBJ = [
 ];
 const Crew = () => {
   const isImgLoaded = useLazyBackground(imgSrc);
-  const { data, isLoading, error, setPage } = useData();
+  let { data, fetchData, isLoading, error, page, setPage } = useData();
   useEffect(() => {
-    setPage('crew');
+    fetchData('crew');
   }, []);
+  data = data.crew;
 
   return (
     <div className={`${styles.page} ${styles.crew} ${isImgLoaded || styles['loading']}`}>

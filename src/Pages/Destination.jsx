@@ -20,13 +20,12 @@ const NAV_OBJ = [
 
 const Destination = () => {
   const isImgLoaded = useLazyBackground(imgSrc);
-  const { data, setPage, isloading, error } = useData();
+  let { data, fetchData, isloading, error, page, setPage } = useData();
   useEffect(() => {
-    setPage('destinations');
+    fetchData('destination');
   }, []);
-
-  if (isloading) return <SpinnerFullPage />;
-  console.log(isloading);
+  if (!data) return <SpinnerFullPage />;
+  data = data.destinations;
   return (
     <div className={`${styles.page} ${styles.destination} ${isImgLoaded || styles['loading']}`}>
       <PageTitle>

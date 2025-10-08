@@ -16,11 +16,12 @@ const NAV_OBJ = [
 ];
 const Technology = () => {
   const isImgLoaded = useLazyBackground(imgSrc);
-  const { data, setPage } = useData();
-
+  let { data, fetchData, isloading, error, page, setPage } = useData();
   useEffect(() => {
     setPage('technology');
-  }, []);
+    fetchData('technology');
+  }, [page]);
+  if (!data) return <p>failed to load data</p>;
 
   return (
     <div className={` ${styles.page} ${styles.technology}  ${isImgLoaded || styles['loading']}`}>
