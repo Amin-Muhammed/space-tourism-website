@@ -17,6 +17,8 @@
 }
 .page.destination {
   background-image: url('../assets/destination/background-destination-desktop.jpg');
+  overflow-x: hidden;
+  /*  to avoid horizontal scroll on destination page while animating */
 }
 .page.crew {
   background-image: url('../assets/crew/background-crew-desktop.jpg');
@@ -27,7 +29,7 @@
 }
 .page.technology {
   background-image: url('../assets/technology/background-technology-desktop.jpg');
-  padding-inline: 5vw 0vw; 
+  padding-inline: 5vw 0vw;
   /* esential for the techno page design */
 }
 
@@ -45,6 +47,7 @@
   justify-items: start;
   column-gap: 2rem;
   width: 100%;
+  overflow-x: hidden;
 }
 
 .destination-nav ul {

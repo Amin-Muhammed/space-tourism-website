@@ -29,7 +29,10 @@ const Technology = () => {
         <span>03</span>
         Space launch 101
       </PageTitle>
-      <PageContentConainer className={TechnologyStyle['technology-content-container']}>
+      <PageContentConainer
+        className={TechnologyStyle['technology-content-container']}
+        typesOfPage={'technology'}
+      >
         <CostumeNavigtion
           className={TechnologyStyle.technologyNav}
           navObject={NAV_OBJ}

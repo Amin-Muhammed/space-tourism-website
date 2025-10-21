@@ -22,7 +22,9 @@ const Crew = () => {
   useEffect(() => {
     fetchData('crew');
   }, []);
+  if (!data) return <LoadingPlanet />; // preventing a bug where the data is not arrived and tries to read the data to compoenents
   data = data.crew;
+  console.log(data);
 
   return (
     <div className={`${styles.page} ${styles.crew} ${isImgLoaded || styles['loading']}`}>
@@ -30,7 +32,7 @@ const Crew = () => {
         <span>02</span>
         Meet your crew
       </PageTitle>
-      <PageContentConainer className={crewStyle['crew-content-container']}>
+      <PageContentConainer typesOfPage={'crew'} className={crewStyle['crew-content-container']}>
         <Outlet context={{ data, isLoading, error }} />
         <CostumeNavigtion
           navObject={NAV_OBJ}

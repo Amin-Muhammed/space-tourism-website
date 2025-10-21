@@ -32,7 +32,7 @@ const Destination = () => {
         <span>01</span>
         Pick your destination
       </PageTitle>
-      <PageContentConainer className={styles['page-content-container']}>
+      <PageContentConainer className={styles['page-content-container']} typesOfPage={'destination'}>
         <Outlet context={{ data, error, isloading, type: 'planet image outlet' }} />
         <CostumeNavigtion
           className={styles['destination-nav']}
