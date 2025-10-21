@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client';
 
 import App from './App.jsx';
 import './global.css';
-import { BrowserRouter } from 'react-router';
+import { HashRouter } from 'react-router';
 import { DataContext } from './context/DataContext.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <DataContext>
         <App />
       </DataContext>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>
 );
