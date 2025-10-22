@@ -1,1 +1,0 @@
-import{r as s}from"./index-DDeWASmY.js";const c=(e,t=0)=>{const[r,a]=s.useState(!1);return s.useEffect(()=>{const u=setTimeout(()=>{const o=new Image;o.src=e,o.onload=()=>a(!0)},t);return()=>clearTimeout(u)},[e,t]),r};export{c as u};
