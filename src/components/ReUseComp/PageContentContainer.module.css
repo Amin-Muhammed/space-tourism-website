@@ -1,0 +1,9 @@
+.scrollContainer {
+  overflow-y: auto;
+  height: 100vh;          /* full viewport height */
+  scroll-behavior: smooth; /* optional: smooth scroll */
+}
+
+.motionWrapper {
+  overflow: hidden;
+}

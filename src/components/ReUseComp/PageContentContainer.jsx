@@ -1,47 +1,42 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import styles from './PageContentContainer.module.css';
 
 const PageContentContainer = ({ children, className = '', typesOfPage }) => {
-  const typesOfPages = useMemo(
-    () => ({
-      destination: (
-        <motion.div
-          initial={{ x: -700, y: 500, opacity: 0, scale: 0.2 }}
-          animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-          exit={{ x: -700, y: -500, opacity: 0, scale: 0.2 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className={`overflow-hidden ${className}`}
-        >
-          {children}
-        </motion.div>
-      ),
-      crew: (
-        <motion.div
-          initial={{ x: -700, opacity: 0, scale: 0.2 }}
-          animate={{ x: 0, opacity: 1, scale: 1 }}
-          exit={{ x: 700, opacity: 0, scale: 0.2 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className={`overflow-hidden ${className}`}
-        >
-          {children}
-        </motion.div>
-      ),
-      technology: (
-        <motion.div
-          initial={{ y: -700, opacity: 0, scale: 0.2 }}
-          animate={{ y: 0, opacity: 1, scale: 1 }}
-          exit={{ y: 700, opacity: 0, scale: 0.2 }}
-          transition={{ duration: 0.6, ease: 'easeInOut' }}
-          className={`overflow-hidden ${className}`}
-        >
-          {children}
-        </motion.div>
-      ),
-    }),
-    [children, className]
-  );
+  const animations = {
+    destination: {
+      initial: { x: -100, y: 50, opacity: 0 },
+      animate: { x: 0, y: 0, opacity: 1 },
+      exit: { x: 100, y: -50, opacity: 0 },
+    },
+    crew: {
+      initial: { x: -100, opacity: 0 },
+      animate: { x: 0, opacity: 1 },
+      exit: { x: 100, opacity: 0 },
+    },
+    technology: {
+      initial: { y: 80, opacity: 0 },
+      animate: { y: 0, opacity: 1 },
+      exit: { y: -80, opacity: 0 },
+    },
+  };
 
-  return typesOfPages[typesOfPage];
+  const { initial, animate, exit } = animations[typesOfPage] || animations.destination;
+
+  return (
+    <div className={`${styles.container}`}>
+      <motion.div
+        key={typesOfPage}
+        initial={initial}
+        animate={animate}
+        exit={exit}
+        transition={{ duration: 0.6, ease: 'easeInOut' }}
+        className={`${styles.motionContent} ${className}`}
+      >
+        {children}
+      </motion.div>
+    </div>
+  );
 };
 
 export default PageContentContainer;

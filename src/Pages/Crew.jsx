@@ -32,16 +32,18 @@ const Crew = () => {
         <span>02</span>
         Meet your crew
       </PageTitle>
-      <PageContentConainer typesOfPage={'crew'} className={crewStyle['crew-content-container']}>
-        <Outlet context={{ data, isLoading, error }} />
-        <CostumeNavigtion
-          navObject={NAV_OBJ}
-          className={crewStyle['crew-nav']}
-          costumeStyle={crewStyle}
-          showNavName={false}
-          applyDefaultStyle={false}
-        />
-      </PageContentConainer>
+      <div className="scroll-container overflow-y-auto">
+        <PageContentConainer typesOfPage={'crew'} className={crewStyle['crew-content-container']}>
+          <Outlet context={{ data, isLoading, error }} />
+          <CostumeNavigtion
+            navObject={NAV_OBJ}
+            className={crewStyle['crew-nav']}
+            costumeStyle={crewStyle}
+            showNavName={false}
+            applyDefaultStyle={false}
+          />
+        </PageContentConainer>
+      </div>
     </div>
   );
 };
