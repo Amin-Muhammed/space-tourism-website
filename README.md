@@ -1,59 +1,102 @@
 # Space Tourism Website
 
-A responsive and interactive **Space Tourism Website** built with **React (Vite)** as part of a [Frontend Mentor](https://www.frontendmentor.io/) challenge (Intermediate difficulty).  
-This project focuses on creating a modern, dynamic user interface using **React Router**, **Framer Motion**, and **CSS Modules** for a clean, component-based architecture.
+A modern and responsive **Space Tourism Website** built with **React**, inspired by a [Frontend Mentor](https://www.frontendmentor.io/) challenge.  
+This project was created to **practice React Router (v7.4)**, **React Context**, and **CSS Modules**, focusing on clean component structure, global state management, and smooth page transitions.
 
 ---
 
-## Live Demo
+## Demo
 
-[View Demo](#) <!-- Replace # with your deployed link -->
-
----
-
-## About the Project
-
-This project simulates a **space tourism website** where users can explore destinations, crew members, and technology related to space travel.  
-It was built to practice **React fundamentals**, **component-driven design**, and **animation integration** using **Framer Motion**.
+**Live Demo:** [https://magenta-lebkuchen-39697e.netlify.app/](https://magenta-lebkuchen-39697e.netlify.app/)
 
 ---
 
-## Built With
+## Project Goals
 
-| Technology | Description |
-|-------------|-------------|
-| **React** | JavaScript library for building modular, reusable UI components. |
-| **Vite** | A fast, modern frontend build tool offering instant HMR (Hot Module Replacement) and optimized production builds. |
-| **React Router v7.4** | Enables seamless page navigation without reloading, creating a Single Page Application (SPA). |
-| **CSS Modules** | Scoped, modular CSS files that prevent naming conflicts and maintain a cleaner codebase. |
-| **Framer Motion** | Animation library for React that allows smooth transitions, page animations, and interactive UI effects. |
-| **ESLint & Prettier** | Ensures consistent code formatting and enforces good coding practices. |
+- Learn and practice **React Router 7.4**
+- Implement **React Context + Hooks** for global state
+- Strengthen understanding of **React component structure**
+- Use **CSS Modules** for modular, scoped styling
+- Build a **multi-page SPA** with smooth navigation
 
 ---
 
-## Features
+## Tech Stack
 
-- Fully responsive design for desktop, tablet, and mobile  
-- Smooth page transitions using Framer Motion  
-- Navigation between pages using React Router  
-- Modular component structure for scalability  
-- Optimized build setup with Vite  
-- Clean and consistent styling with CSS Modules
+| Technology              | Purpose                             |
+| ----------------------- | ----------------------------------- |
+| React                   | Core library for building UI        |
+| React Router 7.4        | Client-side routing                 |
+| React Context + Hooks   | State management and logic handling |
+| CSS Modules             | Scoped component styling            |
+| Vite / Create React App | Development environment             |
+| Netlify                 | Deployment and hosting              |
 
 ---
 
 ## Folder Structure
 
 space-tourism-website/
+│
 ├── public/
+│ └── index.html
+│
 ├── src/
-│ ├── assets/ # Images and static files
 │ ├── components/ # Reusable UI components
 │ ├── pages/ # Page components (Home, Destination, Crew, Technology)
-│ ├── styles/ # CSS Module files
-│ ├── App.jsx # Main app entry point
-│ ├── main.jsx # React root render with Router setup
-│ └── router/ # Routing configuration
-├── package.json
-├── vite.config.js
-└── README.md
+│ ├── context/ # React Context providers and hooks
+│ ├── Hooks/ # hooks
+│ ├── assets/ # Images and icons
+│ ├── App.jsx # Main app with routing setup
+│ └── index.jsx # Entry point
+│
+└── package.json
+
+---
+
+## Routes Overview
+
+| Route          | Description              |
+| -------------- | ------------------------ |
+| `/`            | Home page                |
+| `/destination` | Destination details page |
+| `/crew`        | Meet the crew            |
+| `/technology`  | Technology section       |
+
+Each route uses **React Router** to handle navigation without page reloads.
+
+---
+
+## Styling
+
+- Each component has its own **CSS Module file** for encapsulated styling.
+- Layouts are designed to be **responsive** and **accessible**, following the Frontend Mentor design.
+
+---
+
+## Deployment
+
+Deployed using **Netlify** for smooth CI/CD and fast global delivery.  
+The app uses **React Router’s BrowserRouter** configuration and Netlify’s `_redirects` file to handle client-side routes properly.
+
+---
+
+## What I Learned
+
+- Setting up and using **React Router v7.4**
+- Managing state with **React Context** and **custom hooks**
+- Handling **nested routes** and layout routes
+- Using **CSS Modules** for better style organization
+- Deploying React apps with **Netlify**
+- Managing **page-specific state and transitions**
+
+---
+
+## Author
+
+**Amin Muhammed**  
+[GitHub Profile](https://github.com/Amin-Muhammed)
+
+---
+
+If you found this project useful, consider giving it a star.

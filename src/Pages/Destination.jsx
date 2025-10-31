@@ -20,7 +20,7 @@ const NAV_OBJ = [
 
 const Destination = () => {
   const isImgLoaded = useLazyBackground(imgSrc);
-  let { data, fetchData, isloading, error, page, setPage } = useData();
+  let { data, fetchData, isloading, error } = useData();
   useEffect(() => {
     fetchData('destination');
   }, []);

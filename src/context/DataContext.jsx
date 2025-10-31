@@ -13,12 +13,10 @@ const DataContext = ({ children }) => {
     const cached = localStorage.getItem(page);
     if (cached) {
       // check the storage
-      console.log('taken from storage');
       setdata(JSON.parse(cached));
       return; // stop if the page is in the local storage
     }
     setisloading(true);
-    console.log(page);
     try {
       const response = await fetch(`${BASE_URL}/${page}.json`);
       if (!response.ok) {
