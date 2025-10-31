@@ -36,17 +36,18 @@ This project was created to **practice React Router (v7.4)**, **React Context**,
 
 ## Folder Structure
 
+# Folder Structure
+
 space-tourism-website/
 │
 ├── public/
-│ └── index.html
+│ ├── index.html
 │
 ├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Page components (Home, Destination, Crew, Technology)
-│ ├── context/ # React Context providers and hooks
-│ ├── Hooks/ # hooks
 │ ├── assets/ # Images and icons
+│ ├── components/ # Reusable UI components
+│ ├── context/ # React Context providers and hooks
+│ ├── pages/ # Page components (Home, Destination, Crew, Technology)
 │ ├── App.jsx # Main app with routing setup
 │ └── index.jsx # Entry point
 │
