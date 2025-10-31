@@ -38,7 +38,8 @@ This project was created to **practice React Router (v7.4)**, **React Context**,
 
 # Folder Structure
 
-space-tourism-website/
+$ space-tourism-website
+.
 │
 ├── public/
 │ ├── index.html
