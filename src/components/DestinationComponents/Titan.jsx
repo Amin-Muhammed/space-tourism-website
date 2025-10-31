@@ -1,6 +1,6 @@
 import React from 'react';
 import titan from '../../assets/destination/image-titan.png';
-import styles from './Moon.module.css';
+import styles from './Planets.module.css';
 import { useOutletContext } from 'react-router';
 import useLazyBackground from '../../Hooks/useLazyBackground';
 import LoadingPlanet from './LoadingPlanet/LoadingPlanet';

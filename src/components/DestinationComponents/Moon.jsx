@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Moon.module.css';
+import styles from './Planets.module.css';
 import moon from '../../assets/destination/image-moon.png';
 import { useOutletContext } from 'react-router';
 import useLazyBackground from '../../Hooks/useLazyBackground';

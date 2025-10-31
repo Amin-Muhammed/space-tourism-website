@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOutletContext } from 'react-router';
-import styles from './Moon.module.css';
+import styles from './Planets.module.css';
 import marsImgSrc from '../../assets/destination/image-mars.png';
 import useLazyBackground from '../../Hooks/useLazyBackground';
 import HeaderNavLine from '../LayoutCompoenents/HeaderNavLine';
