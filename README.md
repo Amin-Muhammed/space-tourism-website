@@ -67,6 +67,45 @@ Each route uses **React Router** to handle navigation without page reloads.
 
 ---
 
+## How to Run the Project
+
+Follow these steps to set up and run the project locally:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Amin-Muhammed/space-tourism-website.git
+```
+
+### 2. Navigate to the project directoray
+
+```bash
+cd space-tourism-website
+
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+
+```
+
+### 5. Open the project in your browser
+
+```bash
+http://localhost:5173/
+
+```
+
+---
+
 ## Styling
 
 - Each component has its own **CSS Module file** for encapsulated styling.
